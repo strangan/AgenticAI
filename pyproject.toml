@@ -1,0 +1,28 @@
+[project]
+name = "agentic_ai_poc_bedrock"
+version = "0.1.0"
+description = "agentic_ai_poc_bedrock using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "alembic>=1.16.1",
+    "boto3>=1.38.27",
+    "crewai-tools>=0.45.0",
+    "crewai[tools]>=0.121.1,<1.0.0",
+    "langchain-aws>=0.2.24",
+    "sqlalchemy>=2.0.41",
+]
+
+[project.scripts]
+agentic_ai_poc_bedrock = "agentic_ai_poc_bedrock.main:run"
+run_crew = "agentic_ai_poc_bedrock.main:run"
+train = "agentic_ai_poc_bedrock.main:train"
+replay = "agentic_ai_poc_bedrock.main:replay"
+test = "agentic_ai_poc_bedrock.main:test"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"
